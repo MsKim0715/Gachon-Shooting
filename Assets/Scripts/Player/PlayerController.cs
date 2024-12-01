@@ -35,9 +35,9 @@ namespace Player
         private void Update()
         {
             _inputData = input.GetMoveInput();
-            shooter.Shoot(Player_Stat.ShootDelay, Player_Stat.IsShoot);
-            movement.Move(_inputData, Player_Stat.PlayerSpeed);
-            _playerDie.Die(Player_Stat.HP);
+            shooter?.Shoot(Player_Stat.ShootDelay, Player_Stat.IsShoot);
+            movement?.Move(_inputData, Player_Stat.PlayerSpeed);
+            _playerDie?.Die(Player_Stat.HP);
         }
 
         private void OnEnable()

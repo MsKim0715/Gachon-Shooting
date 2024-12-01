@@ -19,7 +19,7 @@ namespace Projectile.Bullet
 
         private void Update()
         {
-            movement.Move(Vector2.up, Bullet_Stat.BulletSpeed);
+            movement?.Move(Vector2.up, Bullet_Stat.BulletSpeed);
         }
 
         private void OnTriggerEnter2D(Collider2D other)

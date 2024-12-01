@@ -20,7 +20,7 @@ namespace Projectile.Missile
 
         private void Update()
         {
-            movement.Move(Vector2.down, Missile_Stat.MissileSpeed);
+            movement?.Move(Vector2.down, Missile_Stat.MissileSpeed);
         }
 
         private void OnBecameInvisible()
