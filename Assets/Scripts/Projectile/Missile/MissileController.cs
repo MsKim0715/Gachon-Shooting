@@ -12,7 +12,7 @@ namespace Projectile.Missile
         [SerializeField] private MissileStat missileStat;
         private MissileStat Missile_Stat;
 
-        private void Start()
+        private void OnEnable()
         {
             movement = GetComponent<Movement>();
             Missile_Stat = missileStat.Clone() as MissileStat;
@@ -34,6 +34,7 @@ namespace Projectile.Missile
             {
                 var damage = other.GetComponent<IDamageable>();
                 damage?.Damage(Missile_Stat.MissileDamage);
+                Pooler.Instance.ReturnObj(gameObject);
             }
         }
     }

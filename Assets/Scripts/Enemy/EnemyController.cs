@@ -1,6 +1,7 @@
 using CollisionEvent;
 using Data;
 using Move;
+using Pooling;
 using UnityEngine;
 using UseShooter = Shooter.Shooter;
 
@@ -14,7 +15,7 @@ namespace Enemy
         public EnemyStat Enemy_Stat;
         private IDie _enemyDie;
 
-        private void Start()
+        private void OnEnable()
         {
             movement = GetComponent<Movement>();
             enemyShooter = GetComponent<UseShooter>();
@@ -32,6 +33,11 @@ namespace Enemy
         public void Damage(float damage)
         {
             Enemy_Stat.HP -= damage;
+        }
+        
+        private void OnBecameInvisible()
+        {
+            Pooler.Instance.ReturnObj(gameObject);
         }
     }
 }

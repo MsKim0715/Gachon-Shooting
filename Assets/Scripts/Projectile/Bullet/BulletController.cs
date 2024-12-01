@@ -1,6 +1,7 @@
 using CollisionEvent;
 using Data;
 using Move;
+using Pooling;
 using UnityEngine;
 
 namespace Projectile.Bullet
@@ -11,7 +12,7 @@ namespace Projectile.Bullet
         [SerializeField] private BulletStat bulletStat;
         private BulletStat Bullet_Stat;
 
-        private void Start()
+        private void OnEnable()
         {
             movement = GetComponent<Movement>();
             Bullet_Stat = bulletStat.Clone() as BulletStat;
@@ -32,7 +33,11 @@ namespace Projectile.Bullet
             if (other.TryGetComponent(out IDamageable damage))
             {
                 damage?.Damage(Bullet_Stat.BulletDamage);
+                Pooler.Instance.ReturnObj(gameObject);
             }
+            
+            
         }
+        
     }
 }
