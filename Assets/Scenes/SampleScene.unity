@@ -245,6 +245,7 @@ MonoBehaviour:
   onDataReceived:
     m_PersistentCalls:
       m_Calls: []
+  stageNum: 0
 --- !u!1 &199279308
 GameObject:
   m_ObjectHideFlags: 0

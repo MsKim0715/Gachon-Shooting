@@ -25,17 +25,20 @@ namespace Projectile.Missile
 
         private void OnBecameInvisible()
         {
-            Pooler.Instance.ReturnObj(gameObject);
+            if (gameObject.activeSelf)
+            {
+                Pooler.Instance.ReturnObj(gameObject);    
+            }
         }
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.CompareTag("Player"))
-            {
-                var damage = other.GetComponent<IDamageable>();
-                damage?.Damage(Missile_Stat.MissileDamage);
-                Pooler.Instance.ReturnObj(gameObject);
-            }
+            if (!other.CompareTag("Player")) return;
+            if(other.CompareTag(gameObject.tag))return;
+            if (!other.TryGetComponent(out IDamageable damage)) return;
+            
+            damage?.Damage(Missile_Stat.MissileDamage);
+            Pooler.Instance.ReturnObj(gameObject);
         }
     }
 }

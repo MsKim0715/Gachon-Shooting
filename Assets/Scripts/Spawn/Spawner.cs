@@ -55,11 +55,11 @@ namespace Spawn
             for (var i = 0; i < 4; i++)
             for (var j = 0; j < _allStages.Length; j++)
             {
-                _stageNum++;
+                GameManager.Instance.stageNum = _stageNum++;
                 Debug.Log("Stage : " + _stageNum);
                 var obj = Pooler.Instance.GetObj(_allStages[j]);
                 obj.transform.position = transform.position;
-                if (_stageNum >= 40)
+                if (GameManager.Instance.stageNum>= 40)
                 {
                     Debug.Log("Clear");
                     StopAllCoroutines();

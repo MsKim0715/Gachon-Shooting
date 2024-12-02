@@ -20,9 +20,6 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core/Runtime/Debugging/DebugUpdater.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
-  <component name="PerforceDirect.Settings">
-    <option name="CHARSET" value="없음" />
-  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 0
@@ -115,7 +112,8 @@
       <workItem from="1732932373708" duration="35595000" />
       <workItem from="1732973765186" duration="16475000" />
       <workItem from="1733033578245" duration="3791000" />
-      <workItem from="1733037648518" duration="692000" />
+      <workItem from="1733037648474" duration="2071000" />
+      <workItem from="1733110580637" duration="596000" />
     </task>
     <servers />
   </component>

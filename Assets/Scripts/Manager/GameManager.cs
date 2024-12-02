@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public UnityEvent<PlayerStat, Color> onDataReceived;
     private bool isPlayerLive;
+    public int stageNum;
     public static GameManager Instance { get; private set; }
 
     private void Awake()
@@ -35,4 +36,5 @@ public class GameManager : MonoBehaviour
     {
         isPlayerLive = live;
     }
+    
 }

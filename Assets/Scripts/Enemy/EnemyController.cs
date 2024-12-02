@@ -37,7 +37,12 @@ namespace Enemy
         
         private void OnBecameInvisible()
         {
-            Pooler.Instance.ReturnObj(gameObject);
+            if (gameObject.activeSelf)
+            {
+                Pooler.Instance.ReturnObj(gameObject);    
+            }
         }
+
+      
     }
 }
